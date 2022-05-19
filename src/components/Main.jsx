@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 import List from './List'
 import Chart from './Chart'
+import SortButton from './List/SortButton'
 
 import { COLOR } from '../constants'
 
@@ -38,32 +39,9 @@ export default function Main() {
     <>
       <ListWrap>
         <FilterWrap></FilterWrap>
-        <SortWrap onClick={SortValue}>
-          <label>
-            <input type="radio" name="sort" value="person_id" />
-            <span>환자번호순</span>
-          </label>
-          <label>
-            <input type="radio" name="sort" value="gender" />
-            <span>성별순</span>
-          </label>
-          <label>
-            <input type="radio" name="sort" value="birth" />
-            <span>생년월일순</span>
-          </label>
-          <label>
-            <input type="radio" name="sort" value="race" />
-            <span>인종순</span>
-          </label>
-          <label>
-            <input type="radio" name="sort" value="ethnicity" />
-            <span>민족순</span>
-          </label>
-          <label>
-            <input type="radio" name="sort" value="death" />
-            <span>사망순</span>
-          </label>
-        </SortWrap>
+        <SortButtons onClick={SortValue}>
+          <SortButton />
+        </SortButtons>
         <List data={patient} />
       </ListWrap>
       <ChartWrap>
@@ -89,27 +67,8 @@ const ChartWrap = styled.section`
   background-color: ${COLOR.gray};
 `
 const FilterWrap = styled.article``
-const SortWrap = styled.section`
+const SortButtons = styled.section`
   display: flex;
   margin: 5px 0;
   justify-content: flex-end;
-  input {
-    display: none;
-  }
-  label {
-    &::after {
-      margin: 0 5px;
-      content: '|';
-      opacity: 0.5;
-    }
-    &:last-child::after {
-      margin: 0;
-      content: '';
-    }
-  }
-  input:checked + span {
-    background-color: ${COLOR.main};
-    color: ${COLOR.white};
-    font-weight: 500;
-  }
 `
