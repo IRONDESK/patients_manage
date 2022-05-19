@@ -1,11 +1,22 @@
 import styled from '@emotion/styled'
 
+import ListItem from './ListItem'
+
 import { COLOR } from '../../constants'
 
-export default function List() {
+export default function List({ data }) {
   return (
     <>
-      <h1>리스트</h1>
+      <Container>
+        <Li>
+          {data.map((el, index) => (
+            <ListItem key={index} data={el} />
+          ))}
+        </Li>
+      </Container>
     </>
   )
 }
+
+const Container = styled.ul``
+const Li = styled.li``
