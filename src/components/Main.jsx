@@ -39,6 +39,7 @@ export default function Main() {
       )
       .then(res => {
         setPatient(res.data.patient.list)
+        setTotalData(res.data.patient.totalLength)
       })
   }, [patient])
 
@@ -54,16 +55,13 @@ export default function Main() {
   }
 
   const SortValue = e => {
-    // setTotalData(res.data.patient.totalLength)
     setOrderCol(e.target.value)
   }
 
   return (
     <>
       <ListWrap>
-        {/* <FilterWrap> */}
         <FilterButton setFilterState={setFilterState} />
-        {/* </FilterWrap> */}
         <SortButtons onClick={SortValue}>
           <SortButton />
         </SortButtons>
@@ -89,11 +87,6 @@ const ChartWrap = styled.section`
   height: 100%;
   background-color: ${COLOR.gray};
 `
-// const FilterWrap = styled.ul`
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 20px;
-// `
 const SortButtons = styled.section`
   display: flex;
   margin: 5px 0;
