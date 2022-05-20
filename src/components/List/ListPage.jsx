@@ -43,14 +43,20 @@ export default function ListPage({
 }
 
 const Container = styled.section`
-  margin: 10px auto;
+  margin: 25px auto 40px auto;
 `
 const LengthSet = styled.p`
+  margin: 19px 0;
   text-align: center;
 `
 const Input = styled.input`
-  width: 60px;
+  margin: 0 4px;
+  width: 55px;
+  color: ${COLOR.main};
   text-align: right;
+  border: 1px solid ${COLOR.main};
+  outline: none;
+  border-radius: 16px;
 `
 
 const PageButtons = styled.ul`
