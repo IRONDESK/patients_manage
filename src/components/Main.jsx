@@ -17,6 +17,7 @@ export default function Main() {
   const [page, setPage] = useState(1)
   const [pageLength, setPageLength] = useState(30)
   const [orderCol, setOrderCol] = useState('')
+  const [stats, setStats] = useState([])
   const [filterState, setFilterState] = useState({
     gender: '',
     race: '',
@@ -25,9 +26,6 @@ export default function Main() {
     age_max: '',
     death: '',
   })
-  useEffect(() => {
-    console.log(filterState)
-  }, [filterState])
 
   useEffect(() => {
     axios
@@ -82,7 +80,9 @@ export default function Main() {
           setPage={setPage}
         />
       </ListWrap>
-      <ChartWrap>{/* <Chart total={totalData} /> */}</ChartWrap>
+      <ChartWrap>
+        <Chart total={totalData} filter_data={filterState} />
+      </ChartWrap>
     </>
   )
 }
@@ -93,7 +93,6 @@ const ListWrap = styled.section`
   width: 70vw;
   height: 100%;
   overflow-y: scroll;
-  box-sizing: border-box;
 `
 const TableNav = styled.nav`
   display: flex;
@@ -107,6 +106,7 @@ const ChartWrap = styled.section`
   width: 30vw;
   height: 100%;
   background-color: ${COLOR.gray};
+  overflow-y: scroll;
 `
 const SortButtons = styled.section`
   display: flex;

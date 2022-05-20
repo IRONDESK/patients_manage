@@ -1,11 +1,13 @@
+import styled from '@emotion/styled'
+import { useEffect, useState } from 'react'
 import { PieChart, Pie, Cell } from 'recharts'
 
-export default function ChartForm({ datas }) {
-  const data = [
-    { name: 'Name A', value: 30 },
-    { name: 'Name B', value: 20 },
-    { name: 'Name C', value: 20 },
-  ]
+export default function ChartForm({ total, datas }) {
+  const [data, setData] = useState([{}])
+  useEffect(() => {
+    setData(datas)
+  }, [datas])
+
   const COLORS = ['#00C49F', '#FFBB28', '#FF8042']
 
   const RADIAN = Math.PI / 180
@@ -37,7 +39,7 @@ export default function ChartForm({ datas }) {
   }
 
   return (
-    <>
+    <Container>
       <PieChart width={200} height={200}>
         <Pie
           data={data}
@@ -54,6 +56,12 @@ export default function ChartForm({ datas }) {
           ))}
         </Pie>
       </PieChart>
-    </>
+    </Container>
   )
 }
+
+const Container = styled.article`
+  div {
+    margin: 0 auto;
+  }
+`
