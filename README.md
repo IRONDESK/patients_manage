@@ -72,13 +72,12 @@ yarn run dev
 <table>
     <tr height="160px">
         <td align="center" width="600px">
-            <img src="https://user-images.githubusercontent.com/87234410/169524587-7ede09b3-0d26-4aa4-807e-221a65fd9909.png"/>
+            <img width=270 src="https://user-images.githubusercontent.com/87234410/169527422-9438b063-66d6-4edf-99ac-9147235ea166.png"/>
             <br />
             <strong>모바일 화면</strong>
         </td>
     </tr>
 </table>
-
 
 
 <br><br>
