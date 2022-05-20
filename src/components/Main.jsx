@@ -88,7 +88,7 @@ export default function Main() {
 }
 
 const ListWrap = styled.section`
-  padding: 20px 25px;
+  padding: 0 25px;
   float: left;
   width: 73vw;
   height: 100%;

@@ -212,17 +212,24 @@ export default function FilterButton({ setPage, setFilterState }) {
 }
 
 const Container = styled.ul`
+  position: sticky;
+  z-index: 2;
   display: flex;
-  margin: 0 0 20px 0;
+  margin: 20px 0;
+  padding: 18px 23px;
+  top: 20px;
   flex-wrap: wrap;
   gap: 10px 25px;
+  background-color: ${COLOR.white};
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
 `
 const ItemWrap = styled.li``
 const Buttons = styled.p`
   display: inline-block;
-  padding: 3px;
-  border: 1px solid ${COLOR.gray};
+  padding: 6px;
   border-radius: 20px;
+  box-shadow: 0 0 5px 1px ${COLOR.gray};
 `
 const Label = styled.label``
 const ButtonName = styled.span`
@@ -234,6 +241,8 @@ const InputAge = styled.input`
   padding: 1px 0 1px 6px;
   width: 53px;
   font-size: 16px;
+  background-color: ${props => (props.value ? COLOR.main : 'none')};
+  color: ${props => (props.value ? COLOR.white : 'none')};
   border: ${props =>
     props.value
       ? `1px solid ${COLOR.main}`
@@ -249,13 +258,14 @@ const Input = styled.input`
     margin: 0 2px;
     padding: 3px 7px;
     min-width: 35px;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     border-radius: 20px;
   }
   &:checked + span {
     background-color: ${COLOR.main};
     color: ${COLOR.white};
+    font-weight: 600;
     border-radius: 20px;
   }
 `
