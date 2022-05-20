@@ -91,7 +91,9 @@ export default function Main() {
         />
       </ListWrap>
       <ChartWrap>
-        <Chart total={totalData} filter_data={filterState} />
+        {totalData > 0 ? (
+          <Chart total={totalData} filter_data={filterState} />
+        ) : null}
       </ChartWrap>
     </>
   )
