@@ -36,30 +36,49 @@ const PersonId = styled.span`
   width: 93px;
   font-weight: 600;
   text-align: center;
+  @media (max-width: 768px) {
+    margin: 0 8px 0 0;
+    width: 86px;
+  }
 `
 const Gender = styled.span`
   display: inline-block;
   width: 65px;
   text-align: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const Age = styled.span`
   display: inline-block;
   width: 50px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const Birth = styled.span`
   display: inline-block;
   width: 180px;
   text-align: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const Ethnicity = styled.span`
   display: inline-block;
   width: 120px;
   text-align: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const Race = styled.span`
   display: inline-block;
   width: 110px;
   text-align: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const Death = styled.span`
   text-align: center;

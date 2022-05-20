@@ -57,6 +57,9 @@ const Input = styled.input`
   border: 1px solid ${COLOR.main};
   outline: none;
   border-radius: 16px;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `
 
 const PageButtons = styled.ul`

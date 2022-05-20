@@ -30,7 +30,6 @@ export default function Chart({ total, filter_data }) {
         (filter_data?.race ? el.race == filter_data?.race : true)
       )
     })
-    console.log('getStats', getStats)
     const genderFilter = Object.values(
       getStats.reduce((r, o) => {
         let key = ['gender'].map(k => o[k]).join('|')

@@ -38,4 +38,8 @@ const Head = styled.header`
 const Container = styled.main`
   position: relative;
   height: calc(100vh - 70px);
+  @media (max-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+  }
 `

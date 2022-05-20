@@ -223,6 +223,13 @@ const Container = styled.ul`
   background-color: ${COLOR.white};
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
+  @media (max-width: 768px) {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px 0;
+    top: 0;
+    box-shadow: none;
+  }
 `
 const ItemWrap = styled.li``
 const Buttons = styled.p`
@@ -236,6 +243,10 @@ const ButtonName = styled.span`
   margin: 0 6px 0 0;
   font-size: 14px;
   font-weight: 600;
+  @media (max-width: 768px) {
+    display: block;
+    margin: 10px 0;
+  }
 `
 const InputAge = styled.input`
   padding: 1px 0 1px 6px;

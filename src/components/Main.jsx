@@ -113,12 +113,26 @@ const ListWrap = styled.section`
       background-color: ${COLOR.main};
     }
   }
+  @media (max-width: 1400px) {
+    width: 68vw;
+  }
+  @media (max-width: 1280px) {
+    width: 100%;
+    height: calc(100% - 250px);
+  }
+  @media (max-width: 768px) {
+    padding: 0 15px;
+    flex-wrap: wrap;
+  }
 `
 const TableNav = styled.nav`
   display: flex;
   margin: 0 0 12px 0;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 const TotalText = styled.p`
   strong {
@@ -149,6 +163,7 @@ const ChartWrap = styled.section`
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
   }
   &::-webkit-scrollbar-thumb {
     background-color: rgba(${COLOR.mainrgba}, 0.3);
@@ -157,9 +172,22 @@ const ChartWrap = styled.section`
       background-color: ${COLOR.main};
     }
   }
+  @media (max-width: 1400px) {
+    width: 32vw;
+  }
+  @media (max-width: 1280px) {
+    flex-direction: row;
+    width: 100%;
+    height: 250px;
+    gap: 80px;
+  }
 `
 const SortButtons = styled.section`
   display: flex;
   margin: 5px 0;
   justify-content: flex-end;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    letter-spacing: -1.2px;
+  }
 `

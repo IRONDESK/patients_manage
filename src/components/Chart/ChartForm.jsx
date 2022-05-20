@@ -30,7 +30,7 @@ export default function ChartForm({ title, datas }) {
           cx={225}
           cy={95}
           isAnimationActive={true}
-          stroke={false}
+          stroke="false"
           innerRadius={40}
           outerRadius={90}
           paddingAngle={0}

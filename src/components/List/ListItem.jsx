@@ -65,6 +65,12 @@ const InfoWrap = styled.label`
 `
 const Info = styled.article`
   font-size: 18px;
+  @media (max-width: 768px) {
+    span {
+      font-size: 15px;
+      letter-spacing: -0.5px;
+    }
+  }
 `
 const PersonId = styled.span`
   display: inline-block;
@@ -75,30 +81,52 @@ const PersonId = styled.span`
   font-weight: 600;
   font-size: 17px;
   text-align: center;
+  @media (max-width: 768px) {
+    margin: 0 8px 0 0;
+    width: 86px;
+  }
 `
 const Gender = styled.span`
   display: inline-block;
   width: 65px;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 16px;
+    text-align: left;
+  }
 `
 const Age = styled.span`
   display: inline-block;
   width: 50px;
+  @media (max-width: 768px) {
+    width: 22px;
+    text-align: right;
+  }
 `
 const Birth = styled.span`
   display: inline-block;
   width: 180px;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 90px;
+    text-align: right;
+  }
 `
 const Ethnicity = styled.span`
   display: inline-block;
   width: 120px;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 45px;
+  }
 `
 const Race = styled.span`
   display: inline-block;
   width: 110px;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 45px;
+  }
 `
 const Death = styled.p`
   float: right;
@@ -107,6 +135,9 @@ const Death = styled.p`
   text-align: right;
   line-height: 27px;
   opacity: 0.7;
+  @media (max-width: 768px) {
+    padding: 0 4px;
+  }
 `
 
 const Detail = styled.div`
