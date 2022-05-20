@@ -11,6 +11,7 @@ import { COLOR } from '../constants'
 const url = 'http://49.50.167.136:9871/'
 export default function Main() {
   const [patient, setPatient] = useState([])
+  const [totalData, setTotalData] = useState(0)
   const [page, setPage] = useState(1)
   const [pageLength, setPageLength] = useState(30)
   const [orderCol, setOrderCol] = useState('')
@@ -32,6 +33,7 @@ export default function Main() {
   }, [patient])
 
   const SortValue = e => {
+    setTotalData(res.data.patient.totalLength)
     setOrderCol(e.target.value)
   }
 
@@ -45,7 +47,7 @@ export default function Main() {
         <List data={patient} />
       </ListWrap>
       <ChartWrap>
-        <Chart />
+        <Chart total={totalData} />
       </ChartWrap>
     </>
   )
