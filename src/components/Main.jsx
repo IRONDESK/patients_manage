@@ -26,6 +26,10 @@ export default function Main() {
     death: '',
   })
   useEffect(() => {
+    console.log(filterState)
+  }, [filterState])
+
+  useEffect(() => {
     axios
       .get(
         url +

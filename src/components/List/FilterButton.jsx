@@ -64,7 +64,12 @@ export default function FilterButton({ setPage, setFilterState }) {
   const DeathSelected = e => {
     setFilterState(prev => ({
       ...prev,
-      death: e.target.value == 'nowlive' ? 'false' : 'true',
+      death:
+        e.target.value == 'nowlive'
+          ? 'false'
+          : e.target.value == 'nowdeath'
+          ? 'true'
+          : '',
     }))
     setPage(1)
   }
@@ -82,7 +87,7 @@ export default function FilterButton({ setPage, setFilterState }) {
               value=""
               defaultChecked={true}
             />
-            전체
+            <span>전체</span>
           </Label>
           {genders.map((el, index) => (
             <Label>
@@ -92,7 +97,7 @@ export default function FilterButton({ setPage, setFilterState }) {
                 key={'genders-' + index}
                 value={el}
               />
-              {el}
+              <span>{el}</span>
             </Label>
           ))}
         </Buttons>
@@ -108,7 +113,7 @@ export default function FilterButton({ setPage, setFilterState }) {
               value=""
               defaultChecked={true}
             />
-            전체
+            <span>전체</span>
           </Label>
           {races.map((el, index) => (
             <Label>
@@ -118,7 +123,7 @@ export default function FilterButton({ setPage, setFilterState }) {
                 key={'races-' + index}
                 value={el}
               />
-              {el}
+              <span>{el}</span>
             </Label>
           ))}
         </Buttons>
@@ -134,7 +139,7 @@ export default function FilterButton({ setPage, setFilterState }) {
               value=""
               defaultChecked={true}
             />
-            전체
+            <span>전체</span>
           </Label>
           {ethnicities.map((el, index) => (
             <Label>
@@ -144,7 +149,7 @@ export default function FilterButton({ setPage, setFilterState }) {
                 key={'ethnicities-' + index}
                 value={el}
               />
-              {el}
+              <span>{el}</span>
             </Label>
           ))}
         </Buttons>
@@ -157,6 +162,7 @@ export default function FilterButton({ setPage, setFilterState }) {
             id="age_min"
             onChange={AgeminSelected}
             value={ageminState}
+            placeholder="최소"
           />{' '}
           ~{' '}
           <InputAge
@@ -164,6 +170,7 @@ export default function FilterButton({ setPage, setFilterState }) {
             id="age_max"
             onChange={AgemaxSelected}
             value={agemaxState}
+            placeholder="최대"
           />
         </Buttons>
       </ItemWrap>
@@ -178,7 +185,7 @@ export default function FilterButton({ setPage, setFilterState }) {
               value=""
               defaultChecked={true}
             />
-            전체
+            <span>전체</span>
           </Label>
           <Label>
             <Input
@@ -187,7 +194,7 @@ export default function FilterButton({ setPage, setFilterState }) {
               key="death-live"
               value="nowlive"
             />
-            해당없음
+            <span>해당없음</span>
           </Label>
           <Label>
             <Input
@@ -196,7 +203,7 @@ export default function FilterButton({ setPage, setFilterState }) {
               key="death-death"
               value="nowdeath"
             />
-            사망
+            <span>사망</span>
           </Label>
         </Buttons>
       </ItemWrap>
@@ -206,8 +213,9 @@ export default function FilterButton({ setPage, setFilterState }) {
 
 const Container = styled.ul`
   display: flex;
+  margin: 0 0 20px 0;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px 25px;
 `
 const ItemWrap = styled.li``
 const Buttons = styled.p`
@@ -218,16 +226,31 @@ const Buttons = styled.p`
 `
 const Label = styled.label``
 const InputAge = styled.input`
-  width: 55px;
+  padding: 1px 0 1px 6px;
+  width: 53px;
   font-size: 16px;
+  border: ${props =>
+    props.value
+      ? `1px solid ${COLOR.main}`
+      : `1px solid rgba(${COLOR.mainrgba}, 0.3)`};
+  outline: none;
   border-radius: 20px;
 `
 const Input = styled.input`
-  margin: 0 2px;
-  padding: 3px 5px;
-  min-width: 30px;
-  background-color: ${COLOR.main};
-  color: ${COLOR.white};
-  font-size: 16px;
-  border-radius: 20px;
+  display: none;
+  & + span {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 2px;
+    padding: 3px 7px;
+    min-width: 35px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  &:checked + span {
+    background-color: ${COLOR.main};
+    color: ${COLOR.white};
+    border-radius: 20px;
+  }
 `
