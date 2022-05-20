@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { COLOR } from '../../constants'
 
 const url = 'http://49.50.167.136:9871/'
-export default function FilterButton({ setFilterState }) {
+export default function FilterButton({ setPage, setFilterState }) {
   const [genders, setGenders] = useState([])
   const [races, setRaces] = useState([])
   const [ethnicities, setEthnicities] = useState([])
@@ -34,18 +34,21 @@ export default function FilterButton({ setFilterState }) {
       ...prev,
       gender: e.target.value,
     }))
+    setPage(1)
   }
   const RaceSelected = e => {
     setFilterState(prev => ({
       ...prev,
       race: e.target.value,
     }))
+    setPage(1)
   }
   const EthSelected = e => {
     setFilterState(prev => ({
       ...prev,
       ethnicity: e.target.value,
     }))
+    setPage(1)
   }
   const AgeminSelected = e => {
     setFilterState(prev => ({
@@ -53,6 +56,7 @@ export default function FilterButton({ setFilterState }) {
       age_min: e.target.value,
     }))
     setAgeminState(e.target.value)
+    setPage(1)
   }
   const AgemaxSelected = e => {
     setFilterState(prev => ({
@@ -60,12 +64,14 @@ export default function FilterButton({ setFilterState }) {
       age_max: e.target.value,
     }))
     setAgemaxState(e.target.value)
+    setPage(1)
   }
   const DeathSelected = e => {
     setFilterState(prev => ({
       ...prev,
       death: e.target.value == 'nowlive' ? 'false' : 'true',
     }))
+    setPage(1)
   }
 
   return (

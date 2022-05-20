@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 import List from './List'
 import Chart from './Chart'
+import ListPage from './List/ListPage'
 import FilterButton from './List/FilterButton'
 import SortButton from './List/SortButton'
 
@@ -61,11 +62,21 @@ export default function Main() {
   return (
     <>
       <ListWrap>
-        <FilterButton setFilterState={setFilterState} />
-        <SortButtons onClick={SortValue}>
-          <SortButton />
-        </SortButtons>
+        <FilterButton setPage={setPage} setFilterState={setFilterState} />
+        <TableNav>
+          <TotalText>{totalData.toLocaleString()}명의 환자 정보</TotalText>
+          <SortButtons onClick={SortValue}>
+            <SortButton />
+          </SortButtons>
+        </TableNav>
         <List data={patient} />
+        <ListPage
+          total={totalData}
+          pageLength={pageLength}
+          setPageLength={setPageLength}
+          page={page}
+          setPage={setPage}
+        />
       </ListWrap>
       <ChartWrap>{/* <Chart total={totalData} /> */}</ChartWrap>
     </>
@@ -80,6 +91,12 @@ const ListWrap = styled.section`
   overflow-y: scroll;
   box-sizing: border-box;
 `
+const TableNav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+const TotalText = styled.p``
 const ChartWrap = styled.section`
   padding: 20px 25px;
   float: right;
