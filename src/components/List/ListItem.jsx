@@ -19,12 +19,12 @@ export default function ListItem({ data }) {
         <InfoWrap htmlFor={data?.personID}>
           <Info>
             <PersonId>{data?.personID}</PersonId>
-            <Age>{data?.age}세</Age>
             <Gender>{data?.gender}</Gender>
+            <Age>{data?.age}</Age>
             <Birth>{data?.birthDatetime.slice(0, 10)}</Birth>
             <Ethnicity>{data?.ethnicity == 'hispanic' ? 'Y' : 'N'}</Ethnicity>
             <Race>{data?.race}</Race>
-            <Death>{data?.isDeath ? '사망' : ''}</Death>
+            <Death>{data?.isDeath ? 'Dead' : ''}</Death>
           </Info>
         </InfoWrap>
         <Input type="checkbox" id={data?.personID} />
@@ -46,8 +46,10 @@ export default function ListItem({ data }) {
 }
 
 const Container = styled.li`
-  margin: 0 0 15px 0;
-  border: 1px solid ${COLOR.main};
+  margin: 0 0 12px 0;
+  border: 1px solid ${COLOR.gray};
+  border-radius: 5px;
+  overflow: hidden;
 `
 const Input = styled.input`
   display: none;
@@ -68,41 +70,48 @@ const PersonId = styled.span`
   display: inline-block;
   margin: 0 12px 0 0;
   padding: 5px 8px;
-  width: 120px;
-  background-color: ${COLOR.main};
-  color: ${COLOR.white};
+  width: 93px;
+  background-color: ${COLOR.gray};
   font-weight: 600;
-  font-size: 21px;
+  font-size: 17px;
+  text-align: center;
+`
+const Gender = styled.span`
+  display: inline-block;
+  width: 65px;
   text-align: center;
 `
 const Age = styled.span`
   display: inline-block;
-  width: 55px;
-`
-const Gender = styled.span`
-  display: inline-block;
-  width: 35px;
-  text-align: center;
+  width: 50px;
 `
 const Birth = styled.span`
   display: inline-block;
-  width: 130px;
+  width: 180px;
   text-align: center;
 `
 const Ethnicity = styled.span`
   display: inline-block;
-  width: 70px;
+  width: 120px;
   text-align: center;
 `
 const Race = styled.span`
   display: inline-block;
-  width: 60px;
+  width: 110px;
+  text-align: center;
 `
-const Death = styled.span``
+const Death = styled.p`
+  float: right;
+  padding: 0 12px;
+  font-size: 14px;
+  text-align: right;
+  line-height: 27px;
+  opacity: 0.7;
+`
 
 const Detail = styled.div`
   padding: 10px 15px;
-  border-top: 1px solid ${COLOR.main};
+  border-top: 1px solid ${COLOR.gray};
   & li {
     margin: 0 0 0 20px;
     padding: 0 0 0 -3px;
@@ -112,6 +121,5 @@ const Detail = styled.div`
 `
 const DetailSubTitle = styled.p`
   margin: 12px 0 5px 0;
-  color: ${COLOR.main};
   font-weight: 600;
 `

@@ -93,6 +93,16 @@ const ListWrap = styled.section`
   width: 73vw;
   height: 100%;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(${COLOR.mainrgba}, 0.3);
+    border-radius: 100px;
+    &:hover {
+      background-color: ${COLOR.main};
+    }
+  }
 `
 const TableNav = styled.nav`
   display: flex;
@@ -109,7 +119,7 @@ const ChartWrap = styled.section`
   float: right;
   width: 27vw;
   height: 100%;
-  background-color: ${COLOR.gray};
+  background-color: ${COLOR.silver};
   overflow-y: scroll;
 `
 const SortButtons = styled.section`

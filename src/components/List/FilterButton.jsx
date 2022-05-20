@@ -77,7 +77,7 @@ export default function FilterButton({ setPage, setFilterState }) {
   return (
     <Container>
       <ItemWrap id="item-gender">
-        성별
+        <ButtonName>성별</ButtonName>
         <Buttons onClick={GenderSelected}>
           <Label>
             <Input
@@ -103,7 +103,7 @@ export default function FilterButton({ setPage, setFilterState }) {
         </Buttons>
       </ItemWrap>
       <ItemWrap id="item-race">
-        인종
+        <ButtonName>인종</ButtonName>
         <Buttons onClick={RaceSelected}>
           <Label>
             <Input
@@ -129,7 +129,7 @@ export default function FilterButton({ setPage, setFilterState }) {
         </Buttons>
       </ItemWrap>
       <ItemWrap id="item-eth">
-        민족
+        <ButtonName>민족</ButtonName>
         <Buttons onClick={EthSelected}>
           <Label>
             <Input
@@ -155,7 +155,7 @@ export default function FilterButton({ setPage, setFilterState }) {
         </Buttons>
       </ItemWrap>
       <ItemWrap id="item-age">
-        나이
+        <ButtonName>연령</ButtonName>
         <Buttons>
           <InputAge
             type="number"
@@ -175,7 +175,7 @@ export default function FilterButton({ setPage, setFilterState }) {
         </Buttons>
       </ItemWrap>
       <ItemWrap id="item-death">
-        사망여부
+        <ButtonName>사망여부</ButtonName>
         <Buttons onClick={DeathSelected}>
           <Label>
             <Input
@@ -225,6 +225,11 @@ const Buttons = styled.p`
   border-radius: 20px;
 `
 const Label = styled.label``
+const ButtonName = styled.span`
+  margin: 0 6px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+`
 const InputAge = styled.input`
   padding: 1px 0 1px 6px;
   width: 53px;
