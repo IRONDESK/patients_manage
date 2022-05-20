@@ -90,7 +90,7 @@ export default function Main() {
 const ListWrap = styled.section`
   padding: 20px 25px;
   float: left;
-  width: 70vw;
+  width: 73vw;
   height: 100%;
   overflow-y: scroll;
 `
@@ -101,9 +101,13 @@ const TableNav = styled.nav`
 `
 const TotalText = styled.p``
 const ChartWrap = styled.section`
+  display: flex;
   padding: 20px 25px;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
   float: right;
-  width: 30vw;
+  width: 27vw;
   height: 100%;
   background-color: ${COLOR.gray};
   overflow-y: scroll;

@@ -86,16 +86,16 @@ export default function Chart({ total, filter_data }) {
   return (
     <>
       <ChartForm
-        total={total}
+        title="성별"
         datas={[
           {
-            name: '남성',
+            name: 'Male',
             value: genderF?.filter(el => {
               return el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '여성',
+            name: 'Female',
             value: genderF?.filter(el => {
               return el.gender == 'F'
             })[0]?.count,
@@ -103,34 +103,34 @@ export default function Chart({ total, filter_data }) {
         ]}
       />
       <ChartForm
-        total={total}
+        title="인종별"
         datas={[
           {
-            name: 'native',
+            name: 'Native',
             value: raceF?.filter(el => {
               return el.race == 'native'
             })[0]?.count,
           },
           {
-            name: 'black',
+            name: 'Black',
             value: raceF?.filter(el => {
               return el.race == 'black'
             })[0]?.count,
           },
           {
-            name: 'white',
+            name: 'White',
             value: raceF?.filter(el => {
               return el.race == 'white'
             })[0]?.count,
           },
           {
-            name: 'asian',
+            name: 'Asian',
             value: raceF?.filter(el => {
               return el.race == 'asian'
             })[0]?.count,
           },
           {
-            name: 'other',
+            name: 'Other',
             value: raceF?.filter(el => {
               return el.race == 'other'
             })[0]?.count,
@@ -138,16 +138,16 @@ export default function Chart({ total, filter_data }) {
         ]}
       />
       <ChartForm
-        total={total}
+        title="민족별"
         datas={[
           {
-            name: 'nonhispanic',
+            name: 'Nonhispanic',
             value: ethnicityF?.filter(el => {
               return el.ethnicity == 'nonhispanic'
             })[0]?.count,
           },
           {
-            name: 'hispanic',
+            name: 'Hispanic',
             value: ethnicityF?.filter(el => {
               return el.ethnicity == 'hispanic'
             })[0]?.count,
@@ -155,64 +155,64 @@ export default function Chart({ total, filter_data }) {
         ]}
       />
       <ChartForm
-        total={total}
+        title="성-인종"
         datas={[
           {
-            name: '남성-native',
+            name: 'M-Native',
             value: GenRaceF?.filter(el => {
               return el.race == 'native' && el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '남성-black',
+            name: 'M-Black',
             value: GenRaceF?.filter(el => {
               return el.race == 'black' && el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '남성-white',
+            name: 'M-White',
             value: GenRaceF?.filter(el => {
               return el.race == 'white' && el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '남성-asian',
+            name: 'M-Asian',
             value: GenRaceF?.filter(el => {
               return el.race == 'asian' && el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '남성-other',
+            name: 'M-Other',
             value: GenRaceF?.filter(el => {
               return el.race == 'other' && el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '여성-native',
+            name: 'F-Native',
             value: GenRaceF?.filter(el => {
               return el.race == 'native' && el.gender == 'F'
             })[0]?.count,
           },
           {
-            name: '여성-black',
+            name: 'F-Black',
             value: GenRaceF?.filter(el => {
               return el.race == 'black' && el.gender == 'F'
             })[0]?.count,
           },
           {
-            name: '여성-white',
+            name: 'F-White',
             value: GenRaceF?.filter(el => {
               return el.race == 'white' && el.gender == 'F'
             })[0]?.count,
           },
           {
-            name: '여성-asian',
+            name: 'F-Asian',
             value: GenRaceF?.filter(el => {
               return el.race == 'asian' && el.gender == 'F'
             })[0]?.count,
           },
           {
-            name: '여성-other',
+            name: 'F-Other',
             value: GenRaceF?.filter(el => {
               return el.race == 'other' && el.gender == 'F'
             })[0]?.count,
@@ -220,28 +220,28 @@ export default function Chart({ total, filter_data }) {
         ]}
       />
       <ChartForm
-        total={total}
+        title="성-민족"
         datas={[
           {
-            name: '남성-nonhispanic',
+            name: 'M-Nonhispanic',
             value: GenEthF?.filter(el => {
               return el.ethnicity == 'nonhispanic' && el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '남성-hispanic',
+            name: 'M-Hispanic',
             value: GenEthF?.filter(el => {
               return el.ethnicity == 'hispanic' && el.gender == 'M'
             })[0]?.count,
           },
           {
-            name: '여성-hispanic',
+            name: 'F-Hispanic',
             value: GenEthF?.filter(el => {
               return el.ethnicity == 'hispanic' && el.gender == 'F'
             })[0]?.count,
           },
           {
-            name: '여성-nonhispanic',
+            name: 'F-Nonhispanic',
             value: GenEthF?.filter(el => {
               return el.ethnicity == 'nonhispanic' && el.gender == 'F'
             })[0]?.count,
