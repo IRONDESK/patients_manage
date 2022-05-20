@@ -147,6 +147,16 @@ const ChartWrap = styled.section`
   height: 100%;
   background-color: ${COLOR.silver};
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(${COLOR.mainrgba}, 0.3);
+    border-radius: 100px;
+    &:hover {
+      background-color: ${COLOR.main};
+    }
+  }
 `
 const SortButtons = styled.section`
   display: flex;
