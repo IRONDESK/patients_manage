@@ -71,7 +71,14 @@ export default function Main() {
             <SortButton />
           </SortButtons>
         </TableNav>
-        <List data={patient} />
+        {totalData > 0 ? (
+          <List data={patient} />
+        ) : (
+          <NoList>
+            <img src="/images/exclamation.svg" />
+            검색된 환자 정보가 없습니다
+          </NoList>
+        )}
         <ListPage
           total={totalData}
           pageLength={pageLength}
@@ -110,6 +117,18 @@ const TableNav = styled.nav`
   align-items: center;
 `
 const TotalText = styled.p``
+
+const NoList = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  img {
+    margin: 18px 0;
+    width: 36px;
+  }
+`
 const ChartWrap = styled.section`
   display: flex;
   padding: 20px 25px;
