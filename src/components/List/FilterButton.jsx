@@ -22,13 +22,8 @@ export default function FilterButton({ setPage, setFilterState }) {
     })
   }, [])
 
-  const [genderState, setGenderState] = useState('')
-  const [raceState, setRaceState] = useState('')
-  const [ethnicityState, setEthnicityState] = useState('')
   const [ageminState, setAgeminState] = useState('')
   const [agemaxState, setAgemaxState] = useState('')
-  const [deathState, setDeathState] = useState('')
-
   const GenderSelected = e => {
     setFilterState(prev => ({
       ...prev,
