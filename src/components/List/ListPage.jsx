@@ -11,7 +11,9 @@ export default function ListPage({
   setPage,
 }) {
   const setLength = e => {
-    setPageLength(e.target.value)
+    if (e.target.value > 0) {
+      setPageLength(e.target.value)
+    }
   }
   const PageMove = e => {
     if (e.target.value) {
