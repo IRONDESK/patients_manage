@@ -67,7 +67,9 @@ export default function Main() {
       <ListWrap>
         <FilterButton setPage={setPage} setFilterState={setFilterState} />
         <TableNav>
-          <TotalText>{totalData.toLocaleString()}명의 환자 정보</TotalText>
+          <TotalText>
+            <strong>{totalData.toLocaleString()}명</strong>의 환자 정보
+          </TotalText>
           <SortButtons onClick={SortValue}>
             <SortButton />
           </SortButtons>
@@ -114,11 +116,15 @@ const ListWrap = styled.section`
 `
 const TableNav = styled.nav`
   display: flex;
+  margin: 0 0 12px 0;
   justify-content: space-between;
   align-items: center;
 `
-const TotalText = styled.p``
-
+const TotalText = styled.p`
+  strong {
+    font-weight: 700;
+  }
+`
 const NoList = styled.article`
   display: flex;
   flex-direction: column;
