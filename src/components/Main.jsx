@@ -17,7 +17,6 @@ export default function Main() {
   const [page, setPage] = useState(1)
   const [pageLength, setPageLength] = useState(30)
   const [orderCol, setOrderCol] = useState('')
-  const [stats, setStats] = useState([])
   const [filterState, setFilterState] = useState({
     gender: '',
     race: '',
@@ -44,7 +43,7 @@ export default function Main() {
         setPatient(res.data.patient.list)
         setTotalData(res.data.patient.totalLength)
       })
-  }, [patient])
+  }, [patient, orderCol])
 
   const FilterURL = data => {
     return (
@@ -58,7 +57,9 @@ export default function Main() {
   }
 
   const SortValue = e => {
-    setOrderCol(e.target.value)
+    if (e.target.value) {
+      setOrderCol(e.target.value)
+    }
   }
 
   return (

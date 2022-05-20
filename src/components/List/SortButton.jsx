@@ -36,10 +36,16 @@ export default function SortList() {
 
 const Input = styled.input`
   display: none;
+  & + span {
+    cursor: pointer;
+    padding: 0 3px;
+    font-size: 14px;
+    opacity: 0.6;
+  }
   &:checked + span {
-    background-color: ${COLOR.main};
-    color: ${COLOR.white};
-    font-weight: 500;
+    color: ${COLOR.main};
+    font-weight: 700;
+    opacity: 1;
   }
 `
 const Label = styled.label`
