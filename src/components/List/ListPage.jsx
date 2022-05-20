@@ -20,11 +20,21 @@ export default function ListPage({
   }
   return (
     <Container>
-      <LengthSet>
-        한 페이지에{' '}
-        <Input type="number" value={pageLength} onChange={setLength} min={10} />
-        명 씩 보기
-      </LengthSet>
+      {total > 0 ? (
+        <LengthSet>
+          한 페이지에{' '}
+          <Input
+            type="number"
+            value={pageLength}
+            onChange={setLength}
+            min={10}
+          />
+          명 씩 보기
+        </LengthSet>
+      ) : (
+        ''
+      )}
+
       <PageButtons onClick={PageMove}>
         {Array(Math.ceil(total / pageLength))
           .fill(1)
@@ -64,6 +74,7 @@ const Input = styled.input`
 
 const PageButtons = styled.ul`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 6px;
 `

@@ -225,10 +225,11 @@ const Container = styled.ul`
   border-radius: 25px;
   @media (max-width: 768px) {
     position: relative;
-    margin: 10px 0;
+    margin: 0 0 25px 0;
     padding: 10px 0;
     top: 0;
     box-shadow: none;
+    gap: 8px 25px;
   }
 `
 const ItemWrap = styled.li``
