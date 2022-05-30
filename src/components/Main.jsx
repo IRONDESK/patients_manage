@@ -42,7 +42,7 @@ export default function Main() {
         setPatient(res.data.patient.list)
         setTotalData(res.data.patient.totalLength)
       })
-  }, [patient, orderCol, totalData, filterState])
+  }, [patient, orderCol, filterState])
 
   const FilterURL = data => {
     return (
