@@ -3,9 +3,15 @@ import React from 'react'
 
 import { COLOR } from '../../constants'
 
-export default function SortList() {
+export default function SortList({ orderCol }) {
   return (
     <>
+      {orderCol == 'none' ? null : (
+        <Label>
+          <Input type="radio" name="sort" value="none" />
+          <span>정렬해제</span>
+        </Label>
+      )}
       <Label>
         <Input type="radio" name="sort" value="person_id" />
         <span>환자번호순</span>

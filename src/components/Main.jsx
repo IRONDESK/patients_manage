@@ -35,8 +35,7 @@ export default function Main() {
           page +
           '&length=' +
           pageLength +
-          '&order_column=' +
-          orderCol +
+          (orderCol == 'none' ? '' : '&order_column=' + orderCol) +
           FilterURL(filterState)
       )
       .then(res => {
@@ -71,7 +70,7 @@ export default function Main() {
             <strong>{totalData.toLocaleString()}명</strong>의 환자 정보
           </TotalText>
           <SortButtons onClick={SortValue}>
-            <SortButton />
+            <SortButton orderCol={orderCol} />
           </SortButtons>
         </TableNav>
         {totalData > 0 ? (
