@@ -45,7 +45,7 @@ export default function Main() {
         setPatient(res.data.patient.list)
         setTotalData(res.data.patient.totalLength)
       })
-  }, [orderCol, filterState, orderDesc])
+  }, [page, orderCol, filterState, orderDesc])
 
   const FilterURL = data => {
     return (
@@ -61,7 +61,7 @@ export default function Main() {
   const SortValue = e => {
     if (e.target.value == 'orderdesc') {
       setOrderDesc(!orderDesc)
-    } else if (e.target.value) {
+    } else if (e.target.value && e.target.value !== 'orderdesc') {
       setOrderCol(e.target.value)
     }
   }
@@ -193,6 +193,8 @@ const SortButtons = styled.section`
   margin: 5px 0;
   justify-content: flex-end;
   @media (max-width: 768px) {
+    margin: 9px 0;
+    justify-content: center;
     flex-wrap: wrap;
     letter-spacing: -1.2px;
   }

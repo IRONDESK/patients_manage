@@ -7,16 +7,17 @@ export default function SortList({ orderCol, orderDesc }) {
   return (
     <>
       {orderCol == 'none' || !orderCol ? null : (
-        <Label sortControl={true}>
-          <Input type="radio" name="sort" value="none" />
-          <span className="sort_control">정렬해제</span>
-        </Label>
-      )}
-      {orderCol == 'none' || !orderCol ? null : (
-        <Label sortControl={true}>
-          <Input type="checkbox" value="orderdesc" checked={orderDesc} />
-          <span className="sort_control">내림차순</span>
-        </Label>
+        <Control>
+          <Label sortControl={true}>
+            <Input type="radio" name="sort" value="none" />
+            <span className="sort_control">정렬해제</span>
+          </Label>
+
+          <Label sortControl={true}>
+            <Input type="checkbox" value="orderdesc" checked={orderDesc} />
+            <span className="sort_control">내림차순</span>
+          </Label>
+        </Control>
       )}
       <Label>
         <Input type="radio" name="sort" value="person_id" />
@@ -46,6 +47,16 @@ export default function SortList({ orderCol, orderDesc }) {
   )
 }
 
+const Control = styled.article`
+  display: block;
+  margin: 0 5px;
+  @media (max-width: 768px) {
+    margin: 9px 0;
+    width: 100%;
+    text-align: center;
+    order: 1;
+  }
+`
 const Input = styled.input`
   display: none;
   & + span.sort_control {
