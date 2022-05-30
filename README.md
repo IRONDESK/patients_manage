@@ -58,11 +58,12 @@ yarn
 yarn run dev
 ```
 
+
 #### 2.3 스크린샷
 <table>
     <tr height="160px">
         <td align="center" width="600px">
-            <img src="https://user-images.githubusercontent.com/87234410/169524345-8ea6fb96-eaba-4844-b638-00d499a6b970.png"/>
+            <img src="https://user-images.githubusercontent.com/87234410/170961097-db30ea19-771d-4874-aba5-3e7bcf72fbf2.png"/>
             <br />
             <strong>PC 화면</strong>
         </td>
@@ -72,7 +73,7 @@ yarn run dev
 <table>
     <tr height="160px">
         <td align="center" width="600px">
-            <img width=270 src="https://user-images.githubusercontent.com/87234410/169527422-9438b063-66d6-4edf-99ac-9147235ea166.png"/>
+            <img width=270 src="https://user-images.githubusercontent.com/87234410/170961291-fc7836dd-405d-4f27-a648-788128a90a39.png"/>
             <br />
             <strong>모바일 화면</strong>
         </td>
