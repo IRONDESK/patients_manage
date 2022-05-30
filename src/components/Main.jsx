@@ -15,6 +15,7 @@ export default function Main() {
   const [patient, setPatient] = useState([])
   const [totalData, setTotalData] = useState(0)
   const [page, setPage] = useState(1)
+  const [orderDesc, setOrderDesc] = useState(false)
   const [pageLength, setPageLength] = useState(30)
   const [orderCol, setOrderCol] = useState('')
   const [filterState, setFilterState] = useState({
@@ -35,6 +36,8 @@ export default function Main() {
           page +
           '&length=' +
           pageLength +
+          '&order_desc=' +
+          (orderDesc ? 'true' : 'false') +
           (orderCol == 'none' ? '' : '&order_column=' + orderCol) +
           FilterURL(filterState)
       )
@@ -42,7 +45,7 @@ export default function Main() {
         setPatient(res.data.patient.list)
         setTotalData(res.data.patient.totalLength)
       })
-  }, [patient, orderCol, filterState])
+  }, [orderCol, filterState, orderDesc])
 
   const FilterURL = data => {
     return (
@@ -56,7 +59,9 @@ export default function Main() {
   }
 
   const SortValue = e => {
-    if (e.target.value) {
+    if (e.target.value == 'orderdesc') {
+      setOrderDesc(!orderDesc)
+    } else if (e.target.value) {
       setOrderCol(e.target.value)
     }
   }
@@ -70,7 +75,7 @@ export default function Main() {
             <strong>{totalData.toLocaleString()}명</strong>의 환자 정보
           </TotalText>
           <SortButtons onClick={SortValue}>
-            <SortButton orderCol={orderCol} />
+            <SortButton orderCol={orderCol} orderDesc={orderDesc} />
           </SortButtons>
         </TableNav>
         {totalData > 0 ? (
