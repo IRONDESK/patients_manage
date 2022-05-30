@@ -6,7 +6,7 @@ import { COLOR } from '../../constants'
 export default function SortList({ orderCol }) {
   return (
     <>
-      {orderCol == 'none' ? null : (
+      {orderCol == 'none' || !orderCol ? null : (
         <Label>
           <Input type="radio" name="sort" value="none" />
           <span>정렬해제</span>
