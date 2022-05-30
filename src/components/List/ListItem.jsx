@@ -7,16 +7,23 @@ import { COLOR } from '../../constants'
 const url = 'http://49.50.167.136:9871/'
 export default function ListItem({ data }) {
   const [brief, setBrief] = useState()
+  const [checked, setChecked] = useState(false)
   useEffect(() => {
     axios.get(url + 'api/patient/brief/' + data?.personID).then(res => {
       setBrief(res.data)
     })
-  }, [])
+    setChecked(false)
+  }, [data?.personID])
 
   return (
     <>
       <Container>
-        <InfoWrap htmlFor={data?.personID}>
+        <InfoWrap
+          htmlFor={data?.personID}
+          onClick={() => {
+            setChecked(!checked)
+          }}
+        >
           <Info>
             <PersonId>{data?.personID}</PersonId>
             <Gender>{data?.gender}</Gender>
@@ -27,7 +34,7 @@ export default function ListItem({ data }) {
             <Death>{data?.isDeath ? 'Dead' : ''}</Death>
           </Info>
         </InfoWrap>
-        <Input type="checkbox" id={data?.personID} />
+        <Input type="checkbox" id={data?.personID} checked={checked} />
         <Detail>
           <DetailSubTitle>진료 방문</DetailSubTitle>
           {brief ? brief?.visitCount + '회' : 'Loading...'}
